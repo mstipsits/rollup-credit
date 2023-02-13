@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>at.ms</groupId>
+        <artifactId>dec</artifactId>
+        <version>0.1.0.RELEASE-SNAPSHOT</version>
+    </parent>
+
+    <groupId>at.ms.dec</groupId>
+    <artifactId>blockchain-service</artifactId>
+    <version>0.1.0.RELEASE-SNAPSHOT</version>
+    <name>blockchain-service</name>
+    <description>blockchain-service</description>
+
+    <properties>
+        <java.version>19</java.version>
+        <solidity.version>0.8.2</solidity.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>at.ms.dec</groupId>
+            <artifactId>commons</artifactId>
+            <version>0.1.0.RELEASE-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>at.ms.dec</groupId>
+            <artifactId>gateway</artifactId>
+            <version>0.1.0.RELEASE-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.web3j</groupId>
+            <artifactId>core</artifactId>
+            <version>4.8.7</version>
+        </dependency>
+        <dependency>
+            <groupId>io.zksync</groupId>
+            <artifactId>zksync2</artifactId>
+            <version>0.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>18.0</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.web3j</groupId>
+                <artifactId>web3j-maven-plugin</artifactId>
+                <version>4.8.7</version>
+                <configuration>
+                    <soliditySourceFiles/>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

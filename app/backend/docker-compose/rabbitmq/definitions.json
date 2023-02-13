@@ -1,0 +1,13 @@
+{
+  "exchanges": [],
+  "queues": [
+    {
+      "name": "grundBuchService.queue",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    }
+  ],
+  "bindings": []
+}

@@ -1,0 +1,39 @@
+version: '3.7'
+services:
+  postgre-sql:
+    container_name: postgres-sql
+    image: postgres:12
+    environment:
+      POSTGRES_USER: dec
+      POSTGRES_PASSWORD: dec
+      POSTGRES_DB: decDb
+    volumes:
+      - ./postgres-sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - 5431:5432
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+
+  rabbit-mq:
+    container_name: rabbit-mq
+    hostname: rabbit-mq
+    image: rabbitmq:3.8-management
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    volumes:
+      - type: bind
+        source: ./rabbitmq/enabled_plugins
+        target: /etc/rabbitmq/enabled_plugins
+      - type: bind
+        source: ./rabbitmq/rabbitmq.config
+        target: /etc/rabbitmq/rabbitmq.config
+      - type: bind
+        source: ./rabbitmq/definitions.json
+        target: /etc/rabbitmq/definitions.json
+    deploy:
+      resources:
+        limits:
+          memory: 512m

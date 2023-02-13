@@ -1,0 +1,15 @@
+node_modules
+local-setup
+.env
+coverage
+coverage.json
+typechain
+typechain-types
+
+# Hardhat files
+cache
+artifacts
+cache-zk
+artifacts-zk
+
+

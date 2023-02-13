@@ -1,0 +1,140 @@
+[
+  {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "idCreditDb",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "smartContractAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "debtor",
+        "type": "address"
+      }
+    ],
+    "name": "CreditCreatedEvent",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "allCredits",
+    "outputs": [
+      {
+        "internalType": "contract Credit",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_idCreditDb",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_creditAmountWei",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address payable",
+        "name": "_loaner",
+        "type": "address"
+      },
+      {
+        "internalType": "address payable",
+        "name": "_debtor",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_periodMonths",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_interestRateBps",
+        "type": "uint256"
+      }
+    ],
+    "name": "createCreditContract",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getAmountOfCredits",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "creditId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getCreditById",
+    "outputs": [
+      {
+        "internalType": "contract Credit",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "creditId",
+        "type": "uint256"
+      }
+    ],
+    "name": "isCreditPresent",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
